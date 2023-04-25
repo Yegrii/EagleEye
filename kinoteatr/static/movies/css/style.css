@@ -32,7 +32,7 @@ p {
 }
 
 .movies-title {
-    margin-top: -90px;
+    margin-top: -60px;
     padding: 0;
     font-family: 'Monoton', cursive;
     font-size: 100px;
@@ -69,33 +69,30 @@ p {
     font-family: 'Monoton', cursive; /* Здесь указывается ваш выбранный шрифт или его название */
 }
 
-main {
-    padding: 20px;
-}
 .movies-container {
-    display: flex; /* Отображаем контейнер с афишами в виде гибкого контейнера */
-    flex-wrap: wrap; /* Заворачиваем афиши на новую строку при необходимости */
-    gap: 10px; /* Добавляем промежутки между афишами */
-    justify-content: center; /* Выравниваем афиши по центру горизонтально */
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
-.movies-row {
-    display: flex; /* Отображаем ряд с афишами в виде гибкого контейнера */
-    gap: 10px; /* Добавляем промежутки между афишами внутри ряда */
+.movies-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
 }
 
 .movie-card {
-    flex-basis: calc(25% - 10px); /* Задаем ширину каждой афиши внутри ряда (25% - промежутки) */
-    position: relative; /* Добавляем относительное позиционирование для родительского элемента */
-}
-
-.movie-card:hover .poster {
-    transform: scale(1.5); /* Увеличиваем размер изображения на 50% при наведении на афишу */
-    transition: transform 0.3s ease-in-out; /* Добавляем анимацию при изменении размера изображения */
+  position: relative;
+  overflow: hidden;
+  border-radius: 5px;
 }
 
 .poster {
-    width: 100%; /* Занимаем всю ширину родительского элемента */
-    height: auto; /* Автоматически рассчитываем высоту на основе ширины */
-    object-fit: cover; /* Растягиваем изображение на всю высоту и ширину */
-    object-position: center; /* Центрируем изображение по
+  width: 100%;
+  height: 0;
+  padding-bottom: 150%; /* Регулируйте этот параметр, чтобы подогнать размеры картинок */
+  object-fit: cover;
+}
+
+
