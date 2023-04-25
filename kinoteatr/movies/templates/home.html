@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kinoteatr</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'movies/css/style.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ranchers&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="header">
+    <img src="{% static 'movies/img/banner_5.jpeg' %}" alt="Banner" class="banner">
+    <div class="banner-text">
+        <p class="banner-title">YeCinema</p>
+    </div>
+</header>
+<main>
+    {% load static %}
+    <p class="movies-title">Now Showing</p>
+    <p class="movies-subtitle">Click on the movie poster to see more details</p>
+    <div class="movies-container">
+        <div class="movies-row">
+            <!-- Первый ряд афиш -->
+            {% for movie in movies|slice:":4" %}
+            <div class="movie-card">
+                <a href="{% url 'movie_detail' movie.id %}">
+                    <img src="{% static 'movies/poster/poster_{{ forloop.counter }}.jpeg' %}" alt="{{ movie.title }}"
+                         class="poster">
+                    <div class="movie-title">{{ movie.title }}</div>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="movies-row">
+            <!-- Второй ряд афиш -->
+            {% for movie in movies|slice:"4:8" %}
+            <div class="movie-card">
+                <a href="{% url 'movie_detail' movie.id %}">
+                    <img src="{% static 'movies/poster/poster_{{ forloop.counter }}.jpeg' %}" alt="{{ movie.title }}"
+                         class="poster">
+                    <div class="movie-title">{{ movie.title }}</div>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="movies-row">
+            <!-- Третий ряд афиш -->
+            {% for movie in movies|slice:"8:12" %}
+            <div class="movie-card">
+                <a href="{% url 'movie_detail' movie.id %}">
+                    <img src="{% static 'movies/poster/poster_{{ forloop.counter }}.jpeg' %}" alt="{{ movie.title }}"
+                         class="poster">
+                    <div class="movie-title">{{ movie.title }}</div>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</main>
+</body>
+</html>
