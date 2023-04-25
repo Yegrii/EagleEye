@@ -1,5 +1,9 @@
 .DS_Store
 .idea/
 bin/
+
 lib/
+
 pyvenv.cfg
+
+settings.py
