@@ -21,20 +21,20 @@
 <main>
     <p class="movies-title">Now Showing</p>
     <p class="movies-subtitle">Click on the movie poster to see more details</p>
-    <div class="movies-container">
-        <div class="movies-grid">
-            <!-- Блок с 9 картинками -->
-            {% for movie in movies|slice:":9" %}
-            <div class="movie-card">
-                <a href="{% url 'movie_detail' movie.id %}">
-                    <img src="{% static 'movies/poster/poster_{{ forloop.counter }}.jpeg' %}" alt="{{ movie.title }}"
-                         class="poster">
-                    <div class="movie-title">{{ movie.title }}</div>
-                </a>
-            </div>
-            {% endfor %}
-        </div>
-    </div>
+<!--    <div class="movies-container">-->
+<!--        <div class="movies-grid">-->
+<!--            &lt;!&ndash; Блок с 9 картинками &ndash;&gt;-->
+<!--            {% for movie in movies|slice:":9" %}-->
+<!--            <div class="movie-card">-->
+<!--                <a href="{% url 'movie_detail' movie.id %}">-->
+<!--                    <img src="{% static 'movies/poster/poster_{{ forloop.counter }}.jpeg' %}" alt="{{ movie.title }}"-->
+<!--                         class="poster">-->
+<!--                    <div class="movie-title">{{ movie.title }}</div>-->
+<!--                </a>-->
+<!--            </div>-->
+<!--            {% endfor %}-->
+<!--        </div>-->
+<!--    </div>-->
 </main>
 </body>
 </html>
