@@ -19,22 +19,76 @@
     </div>
 </header>
 <main>
-    <p class="movies-title">Now Showing</p>
+    <h2 class="movies-title">Now Showing</h2>
     <p class="movies-subtitle">Click on the movie poster to see more details</p>
-<!--    <div class="movies-container">-->
-<!--        <div class="movies-grid">-->
-<!--            &lt;!&ndash; Блок с 9 картинками &ndash;&gt;-->
-<!--            {% for movie in movies|slice:":9" %}-->
-<!--            <div class="movie-card">-->
-<!--                <a href="{% url 'movie_detail' movie.id %}">-->
-<!--                    <img src="{% static 'movies/poster/poster_{{ forloop.counter }}.jpeg' %}" alt="{{ movie.title }}"-->
-<!--                         class="poster">-->
-<!--                    <div class="movie-title">{{ movie.title }}</div>-->
-<!--                </a>-->
-<!--            </div>-->
-<!--            {% endfor %}-->
-<!--        </div>-->
-<!--    </div>-->
+    <div class="movies-container">
+        <div class="movies-grid">
+            <!-- Блок с 9 картинками -->
+            <div class="row">
+                <div class="col">
+                    <a href="{% url 'movie_detail' movie_id=1 %}">
+                        <div class="movie-title">Movie 1</div>
+                        <img src="{% static 'movies/img/poster_1.jpeg' %}" alt="Movie 1" class="poster">
+                    </a>
+                </div>
+                <div class="col">
+                    <a href="{% url 'movie_detail' movie_id=2 %}">
+                        <div class="movie-title">Movie 2</div>
+                        <img src="{% static 'movies/img/poster_2.jpeg' %}" alt="Movie 2" class="poster">
+                    </a>
+                </div>
+                <div class="col">
+                    <a href="{% url 'movie_detail' movie_id=3 %}">
+                        <div class="movie-title">Movie 3</div>
+                        <img src="{% static 'movies/img/poster_3.jpeg' %}" alt="Movie 3" class="poster">
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <a href="{% url 'movie_detail' movie_id=4 %}">
+                        <div class="movie-title">Movie 4</div>
+                        <img src="{% static 'movies/img/poster_4.jpeg' %}" alt="Movie 4" class="poster">
+                    </a>
+                </div>
+                <div class="col">
+                    <a href="{% url 'movie_detail' movie_id=5 %}">
+                        <div class="movie-title">Movie 5</div>
+                        <img src="{% static 'movies/img/poster_5.jpeg' %}" alt="Movie 5" class="poster">
+                    </a>
+                </div>
+                <div class="col">
+                    <a href="{% url 'movie_detail' movie_id=6 %}">
+                        <div class="movie-title">Movie 6</div>
+                        <img src="{% static 'movies/img/poster_6.jpeg' %}" alt="Movie 6" class="poster">
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <a href="{% url 'movie_detail' movie_id=7 %}">
+                        <div class="movie-title">Movie 7</div>
+                        <img src="{% static 'movies/img/poster_7.jpeg' %}" alt="Movie 7" class="poster">
+                    </a>
+                </div>
+                <div class="col">
+                    <a href="{% url 'movie_detail' movie_id=8 %}">
+                        <div class="movie-title">Movie 8</div>
+                        <img src="{% static 'movies/img/poster_8.jpeg' %}" alt="Movie 8" class="poster">
+                    </a>
+                </div>
+                <div class="col">
+                    <a href="{% url 'movie_detail' movie_id=9 %}">
+                        <div class="movie-title">Movie 9</div>
+                        <img src="{% static 'movies/img/poster_9.jpeg' %}" alt="Movie 9" class="poster">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
 </main>
+<footer class="foot">
+    <p class="footer-text">YeCinema &copy; 2023. All rights reserved.</p>
+</footer>
 </body>
 </html>
